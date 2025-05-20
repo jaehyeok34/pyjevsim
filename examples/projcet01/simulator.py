@@ -1,18 +1,25 @@
 import project_config
-from generator import Generator
+from examples.projcet01.manuever import Manuever
 from pyjevsim import SysExecutor, ExecutionType
+from examples.projcet01.manuever_object import ManueverObject
+
+waypoints = [(3, 3, 0), (10, 3, 0), (10, 10, 0), (10, 0, 0), (0, 0, 0)]
+
+mb1 = ManueverObject(0, 0, 0, 0, 1, 0)
+# mb2 = ManueverObject(10, 0, 0, 0, 10, 0)
 
 se = SysExecutor(1, ex_mode=ExecutionType.R_TIME)
 se.insert_input_port("start")
 
-gen1 = Generator("Gen1", 1)
-gen2 = Generator("Gen2", 2)
+gen1 = Manuever("Gen1", mb1, waypoints)
+# gen2 = Manuever("Gen2", mb2)
 
 se.register_entity(gen1)
-se.coupling_relation(se, "start", gen1, "start")
+# se.register_entity(gen2)
 
-se.register_entity(gen2)
-se.coupling_relation(se, "start", gen2, "start")
+# 시뮬레이션 엔진과 모델 연결
+se.coupling_relation(se, "start", gen1, "start")
+# se.coupling_relation(se, "start", gen2, "start")
 
 se.insert_external_event("start", None)
 

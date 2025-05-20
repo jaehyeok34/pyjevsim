@@ -3,7 +3,7 @@ from examples.projcet01.manuever import Manuever
 from pyjevsim import SysExecutor, ExecutionType
 from examples.projcet01.manuever_object import ManueverObject
 
-waypoints = [(3, 3, 0), (10, 3, 0), (10, 10, 0), (10, 0, 0), (0, 0, 0)]
+waypoints = [(3, 3, 0), (10, 3, 0), (10, 0, 0), (0, 0, 0)]
 
 mb1 = ManueverObject(0, 0, 0, 0, 1, 0)
 # mb2 = ManueverObject(10, 0, 0, 0, 10, 0)

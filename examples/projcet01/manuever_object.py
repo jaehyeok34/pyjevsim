@@ -74,7 +74,5 @@ class ManueverObject:
 		else:
 			self.z += z_move_distance
 
-		print(f'{z_move_distance}, {xy_move_distance}, {z_move_distance + xy_move_distance}, {horizontal_distance}')
-
 		return horizontal_distance
 			

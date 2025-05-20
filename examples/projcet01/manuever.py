@@ -31,7 +31,7 @@ class Manuever(BehaviorModel):
             distance = self.platform.calc_next_pos_with_pos(self.waypoints[0], 1)
             print(distance)
             if distance < 0.5:
-                print('target position reached')
+                print(f'target position reached')
                 # waypoints에서 현재 waypoint를 제거
                 self.waypoints.pop(0)
 
